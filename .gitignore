@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Django
+db.sqlite3
+*.sqlite3
+*.log
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+.env/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Media/uploads
+/media/
+media/
+uploads/
+
+# Static files (collected)
+staticfiles/
+static_root/
+static/
+
+# Node modules (if any)
+node_modules/
+
+# Compiled files
+*.so
+
+# Backup files
+*.bak
+*.swp
+*~
+
+# dotenv
+.env

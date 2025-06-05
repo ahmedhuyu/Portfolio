@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <!-- Example: About Section -->
+  <section class="section about-me" data-section="section1">
+    <div class="container">
+      <div class="section-heading">
+        <h2>{{ about_section.title }}</h2>
+        <div class="line-dec"></div>
+        <span>{{ about_section.description }}</span>
+      </div>
+      <!-- Add more content or include other partials here -->
+    </div>
+  </section>
+{% endblock %}
