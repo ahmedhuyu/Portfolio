@@ -32,7 +32,6 @@ uploads/
 # Static files (collected)
 staticfiles/
 static_root/
-static/
 
 # Node modules (if any)
 node_modules/
