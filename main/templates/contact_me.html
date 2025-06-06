@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="section contact-me" data-section="section4">
+  <div class="container">
+    <div class="section-heading" style="direction: rtl;">
+      <h2>تواصل معي</h2>
+      <div class="line-dec"></div>
+      <span> للتواصل أو الاستفسار عن أي خدمة أو مشروع.</span>
+    </div>
+    <div class="row">
+      <div class="right-content">
+        <div class="container">
+          {% if sent %}
+            <div class="alert alert-success" style="direction: rtl; text-align: right;">تم إرسال رسالتك بنجاح!</div>
+          {% endif %}
+          <form id="contact" action="" method="post" style="direction: rtl; text-align: right;">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-6">
+                    <fieldset>
+                         {{ form.name }}
+                    </fieldset>
+                </div>
+              <div class="col-md-6">
+                <fieldset>
+                  {{ form.email }}
+                </fieldset>
+              </div>
+              <div class="col-md-12">
+                <fieldset>
+                  {{ form.subject }}
+                </fieldset>
+              </div>
+              <div class="col-md-12">
+                <fieldset>
+                  {{ form.message }}
+                </fieldset>
+              </div>
+              <div class="col-md-12">
+                <fieldset>
+                  <button type="submit" id="form-submit" class="button">
+                    إرسال الرسالة
+                  </button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

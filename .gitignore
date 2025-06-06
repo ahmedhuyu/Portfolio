@@ -5,10 +5,7 @@ __pycache__/
 *.pyd
 *.pyc
 
-# Django
-db.sqlite3
-*.sqlite3
-*.log
+
 
 # Virtual environment
 venv/
@@ -24,10 +21,7 @@ ENV/
 .DS_Store
 Thumbs.db
 
-# Media/uploads
-/media/
-media/
-uploads/
+
 
 # Static files (collected)
 staticfiles/

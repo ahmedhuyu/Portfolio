@@ -6,10 +6,47 @@
   <section class="section about-me" data-section="section1">
     <div class="container">
       <div class="section-heading">
-        <h2>{{ about_section.title }}</h2>
+        <h2 dir="auto" style="unicode-bidi: plaintext;">{{ about_section.title }}</h2>
         <div class="line-dec"></div>
-        <span>{{ about_section.description }}</span>
+        <span dir="auto" style="unicode-bidi: plaintext; text-align: right;">{{ about_section.description }}</span>
       </div>
+      {% for cert in certificates %}
+        <div class="{% if cert.is_left_image %}left-image-post{% else %}right-image-post{% endif %}">
+          <div class="row">
+            {% if cert.is_left_image %}
+              <div class="col-md-6">
+                <div class="left-image">
+                  <img src="{{ cert.image.url }}" alt="{{ cert.title }}" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-text">
+                  <h4 dir="auto" style="unicode-bidi: plaintext; text-align: right;">{{ cert.title }}</h4>
+                  <p dir="rtl" style="text-align: right; unicode-bidi: embed;">{{ cert.description }}</p>
+                  {# <div class="white-button"> #}
+                    {# <a href="#">Read More</a> #}
+                  {# </div> #}
+                </div>
+              </div>
+            {% else %}
+              <div class="col-md-6">
+                <div class="left-text">
+                  <h4 dir="auto" style="unicode-bidi: plaintext; text-align: right;">{{ cert.title }}</h4>
+                  <p dir="rtl" style="text-align: right; unicode-bidi: embed;">{{ cert.description }}</p>
+                  {# <div class="white-button"> #}
+                    {# <a href="#">Read More</a> #}
+                  {# </div> #}
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-image">
+                  <img src="{{ cert.image.url }}" alt="{{ cert.title }}" />
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
       <!-- Add more content or include other partials here -->
     </div>
   </section>

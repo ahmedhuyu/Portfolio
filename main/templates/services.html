@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="section my-services" data-section="section2">
+  <div class="container">
+    <div class="section-heading">
+      <h2 dir="auto" style="unicode-bidi: plaintext;">{{ service_section.title }}</h2>
+      <div class="line-dec"></div>
+      <span dir="auto" style="unicode-bidi: plaintext; text-align: right;">{{ service_section.description }}</span>
+    </div>
+    <div class="row">
+      {% for service in services %}
+      <div class="col-md-6">
+        <div class="service-item d-flex flex-column justify-content-start align-items-end service-item-equal">
+          {% if service.icon_class %}
+            <div class="{{ service.icon_class }} service-icon service-icon-right mb-3"></div>
+          {% endif %}
+          <h4 dir="auto" style="unicode-bidi: plaintext; text-align: right;">{{ service.title }}</h4>
+          <p dir="auto" style="unicode-bidi: plaintext; text-align: right;">{{ service.description }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

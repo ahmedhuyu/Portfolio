@@ -5,21 +5,19 @@
     <i class="fa fa-times" id="menu-close"></i>
     <div class="container">
       <div class="image">
-        {% if author and author.image %}
           <a href="#"><img src="{{ author.image.url }}" alt="" /></a>
-        {% else %}
-          <a href="#"><img src="{% static 'assets/images/author-image.jpg' %}" alt="" /></a>
-        {% endif %}
       </div>
       <div class="author-content">
-        <h4>{{ author.name|default:"Reflux Me" }}</h4>
-        <span>{{ author.title|default:"Web Designer" }}</span>
+        <h4>{{ author.name}}</h4>
+        <span>{{ author.title}}</span>
       </div>
       <nav class="main-nav" role="navigation">
         <ul class="main-menu">
-            {% for section in sections %}
-                <li><a href="#{{ section.section_id }}">{{ section.title }}</a></li>
-            {% endfor %}
+            <li><a href="/" dir="auto" style="unicode-bidi: plaintext;" class="{% if request.path == '/' %}active{% endif %}">من أنا ؟</a></li>
+            <li><a href="{% url 'services' %}" dir="auto" style="unicode-bidi: plaintext;" class="{% if request.path == '/services/' %}active{% endif %}">ماذا أقدم؟</a></li>
+            <li><a href="{% url 'my_works' %}" dir="auto" style="unicode-bidi: plaintext;" class="{% if request.path == '/my-works/' %}active{% endif %}">أعمالي</a></li>
+            <li><a href="{% url 'contact_me' %}" dir="auto" style="unicode-bidi: plaintext;" class="{% if request.path == '/contact/' %}active{% endif %}">تواصل معي</a></li>
+            <!-- Add more static or dynamic links as needed -->
         </ul>
       </nav>
       <div class="social-network">

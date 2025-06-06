@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="section my-works" data-section="section3">
+  <div class="container">
+    <div class="section-heading">
+      <h2 dir="auto" style="unicode-bidi: plaintext;">{{ works_section_title|default:'أعمالي' }}</h2>
+      <div class="line-dec"></div>
+      <span dir="auto" style="unicode-bidi: plaintext; text-align: right;">{{ works_section_description|default:'بعض من المشاريع التي عملت عليها' }}</span>
+    </div>
+    <div class="row">
+      {% for work in works %}
+      <div class="col-md-6">
+        <div class="service-item d-flex flex-column justify-content-start align-items-end service-item-equal">
+          {% if work.image %}
+            <img src="{{ work.image.url }}" class="work-image mb-3" alt="{{ work.title }}" style="width:70px; height:70px; object-fit:cover; border-radius:8px; align-self:flex-end;">
+          {% endif %}
+          <h4 dir="auto" style="unicode-bidi: plaintext; text-align: right;">{{ work.title }}</h4>
+          <p dir="auto" style="unicode-bidi: plaintext; text-align: right;">{{ work.description }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}
