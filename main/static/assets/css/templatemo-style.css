@@ -285,18 +285,18 @@ html {
 }
 
 #menu-toggle {
-    z-index: 999;
+    z-index: 99999 !important; /* Extremely high to be on top */
     cursor: pointer;
     position: fixed;
-    top: 0;
-    right: 0;      /* <-- Move to right */
-    color: #fff; /*#a43f49; */
-    /* background-color: #fff; */
+    top: 25px;
+    right: 25px;
+    color: #fff;
     width: 60px;
     height: 60px;
     text-align: center;
     display: inline-block;
     line-height: 60px;
+    pointer-events: auto !important;
 }
 
 .menu-close {
@@ -324,6 +324,7 @@ html {
     left: 10%;
     right: 35%;
     position: relative;
+    z-index: 1;
     min-height: 100vh;
     padding-bottom: 80px;
     border-bottom: 3px solid rgba(250, 250, 250, 0.25);
@@ -897,4 +898,13 @@ section.contact-me {
     .menu.open {
         z-index: 10001 !important;
     }
+}
+
+.responsive-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: auto;
+    z-index: 100100 !important; /* Higher than any .section or .about-me */
+    pointer-events: auto;
 }
