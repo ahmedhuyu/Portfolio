@@ -889,4 +889,12 @@ section.contact-me {
     .menu {
         background-color: #00254e !important; /* Remove opacity for mobile */
     }
+
+    #menu-toggle {
+        z-index: 10002 !important;
+    }
+    .menu,
+    .menu.open {
+        z-index: 10001 !important;
+    }
 }
