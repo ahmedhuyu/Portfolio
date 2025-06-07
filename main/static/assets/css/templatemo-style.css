@@ -884,3 +884,9 @@ section.contact-me {
     color: #a43f49 !important;
     background: rgba(250, 250, 250, 0.9) !important;
 }
+
+@media screen and (max-width: 845px) {
+    .menu {
+        background-color: #00254e !important; /* Remove opacity for mobile */
+    }
+}
